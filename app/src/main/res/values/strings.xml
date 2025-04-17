@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">login</string>
+    <string name="ingrese_el_correo">Ingrese el correo</string>
+</resources>
