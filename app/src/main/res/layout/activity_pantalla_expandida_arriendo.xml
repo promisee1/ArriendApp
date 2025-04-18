@@ -1,198 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    android:background="#F5F5F5">
+    android:padding="16dp">
 
-    <!-- Imágenes del departamento -->
-    <LinearLayout
-        android:id="@+id/layoutImagenes"
-        android:layout_width="0dp"
-        android:layout_height="180dp"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginBottom="20dp"
-        android:weightSum="2"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardDetalle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <ImageView
-            android:id="@+id/imgDepto1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginEnd="8dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/departamento"
-            android:clipToOutline="true" />
-
-        <ImageView
-            android:id="@+id/imgDepto2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginStart="8dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/departamento"
-            android:clipToOutline="true" />
-    </LinearLayout>
-
-    <!-- Título -->
-    <TextView
-        android:id="@+id/tvTitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Departamento en Arriendo"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:textColor="#212121"
-        app:layout_constraintTop_toBottomOf="@id/layoutImagenes"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="12dp"
-        android:layout_marginTop="12dp" />
-
-    <!-- Detalles (contenedor) -->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layoutDetalles"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@id/tvTitulo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <!-- Ubicación -->
-        <TextView
-            android:id="@+id/tvUbicacion"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="📍 Ubicación: Talca, Región del Maule"
-            android:textSize="16sp"
-            android:textColor="#424242"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:padding="20dp">
 
-        <!-- Precio -->
-        <TextView
-            android:id="@+id/tvPrecio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="💵 Precio mensual: $380.000"
-            android:textSize="16sp"
-            android:textColor="#424242"
-            app:layout_constraintTop_toBottomOf="@id/tvUbicacion"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="8dp" />
 
-        <!-- Gastos comunes -->
-        <TextView
-            android:id="@+id/tvGastos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="💸 Gastos comunes: $45.000"
-            android:textSize="16sp"
-            android:textColor="#424242"
-            app:layout_constraintTop_toBottomOf="@id/tvPrecio"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="8dp" />
+            <LinearLayout
+                android:id="@+id/layoutImagenes"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"
+                android:weightSum="2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Habitaciones -->
-        <TextView
-            android:id="@+id/tvHabitacionesLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="🛏 Habitaciones:"
-            android:textSize="16sp"
-            android:textColor="#424242"
-            app:layout_constraintTop_toBottomOf="@id/tvGastos"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="12dp" />
+                <ImageView
+                    android:id="@+id/imgDepto1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/departamento"
+                    android:clipToOutline="true" />
 
-        <TextView
-            android:id="@+id/tvHabitacionesValor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2"
-            android:textSize="16sp"
-            android:textColor="#424242"
-            app:layout_constraintTop_toTopOf="@id/tvHabitacionesLabel"
-            app:layout_constraintEnd_toEndOf="parent" />
+                <ImageView
+                    android:id="@+id/imgDepto2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/departamento"
+                    android:clipToOutline="true" />
+            </LinearLayout>
 
-        <!-- Baños -->
-        <TextView
-            android:id="@+id/tvBanosLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="🚿 Baños:"
-            android:textSize="16sp"
-            android:textColor="#424242"
-            app:layout_constraintTop_toBottomOf="@id/tvHabitacionesLabel"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="8dp" />
 
-        <TextView
-            android:id="@+id/tvBanosValor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1"
-            android:textSize="16sp"
-            android:textColor="#424242"
-            app:layout_constraintTop_toTopOf="@id/tvBanosLabel"
-            app:layout_constraintEnd_toEndOf="parent" />
+            <TextView
+                android:id="@+id/tvTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Departamento en Arriendo"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@id/layoutImagenes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp" />
 
-        <!-- Estacionamiento -->
-        <TextView
-            android:id="@+id/tvEstacionamientoLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="🚗 Estacionamiento:"
-            android:textSize="16sp"
-            android:textColor="#424242"
-            app:layout_constraintTop_toBottomOf="@id/tvBanosLabel"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="8dp" />
 
-        <TextView
-            android:id="@+id/tvEstacionamientoValor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1"
-            android:textSize="16sp"
-            android:textColor="#424242"
-            app:layout_constraintTop_toTopOf="@id/tvEstacionamientoLabel"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="12dp" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutDetalles"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
 
-    <!-- Imagen del dueño -->
-    <ImageView
-        android:id="@+id/imgPerfilDueno"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/iconousuario"
-        android:scaleType="centerCrop"
-        android:clipToOutline="true"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/layoutDetalles"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+                <TextView
+                    android:id="@+id/tvUbicacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 Ubicación: Talca, Región del Maule"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Nombre del dueño -->
-    <TextView
-        android:id="@+id/tvNombreDueno"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Juan Pérez"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="#212121"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/imgPerfilDueno"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+                <TextView
+                    android:id="@+id/tvPrecio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="💵 Precio mensual: $380.000"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvUbicacion"
+                    app:layout_constraintStart_toStartOf="parent" />
 
+                <TextView
+                    android:id="@+id/tvGastos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="💸 Gastos comunes: $45.000"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvPrecio"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvHabitacionesLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🛏 Habitaciones:"
+                    android:textSize="16sp"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvGastos"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvHabitacionesValor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toTopOf="@id/tvHabitacionesLabel"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvBanosLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🚿 Baños:"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvHabitacionesLabel"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvBanosValor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toTopOf="@id/tvBanosLabel"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvEstacionamientoLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🚗 Estacionamiento:"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvBanosLabel"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvEstacionamientoValor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="12dp"
+                    app:layout_constraintTop_toTopOf="@id/tvEstacionamientoLabel"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/imgPerfilDueno"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/iconousuario"
+                android:scaleType="centerCrop"
+                android:clipToOutline="true"
+                app:layout_constraintTop_toBottomOf="@id/layoutDetalles"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvNombreDueno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Juan Pérez"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/imgPerfilDueno"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

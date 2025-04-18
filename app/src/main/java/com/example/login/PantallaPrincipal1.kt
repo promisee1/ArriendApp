@@ -24,6 +24,11 @@ class PantallaPrincipal1 : AppCompatActivity() {
         binding.cardSubirArriendo.setOnClickListener {
             val intent = Intent(this, PantallaSubirArriendo::class.java)
             startActivity(intent)                }
+
+        binding.btnProfile.setOnClickListener {
+            val intent = Intent(this, PantallaPerfil::class.java)
+            startActivity(intent)
+        }
     }
 
 }

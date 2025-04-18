@@ -29,7 +29,7 @@ class Registrarse : AppCompatActivity() {
 
         auth = Firebase.auth
 
-        binding.btnRegistrar.setOnClickListener {
+        binding.btnRegister.setOnClickListener {
             val email = binding.etEmail.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
 
