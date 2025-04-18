@@ -3,10 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PantallaPrincipal"
     android:padding="16dp">
 
     <!-- Toolbar: Barra superior -->
@@ -15,11 +13,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
+        android:title="Mi Perfil de Arrendador"
         android:titleTextColor="#FFFFFF"
-        android:layout_alignParentTop="true"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Botón de sesión -->
     <ImageButton
         android:id="@+id/btnProfile"
         android:layout_width="45dp"
@@ -32,26 +31,51 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
+    <!-- Botones de Crear y Editar -->
+    <LinearLayout
+        android:id="@+id/LL"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <!-- Botón Crear -->
+        <Button
+            android:id="@+id/btnCrear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Crear Arriendo"
+            android:layout_weight="1" />
+
+        <!-- Botón Editar -->
+        <Button
+            android:id="@+id/btnEditar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Editar Arriendo"
+            android:layout_weight="1" />
+    </LinearLayout>
+
     <TextView
-        android:id="@+id/tvTitulo"
+        android:id="@+id/tvarriendo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Arriendos disponibles"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+        android:text="Tus arriendos"
+        app:layout_constraintTop_toBottomOf="@+id/LL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
-    <!-- RecyclerView para los arriendos -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerArriendos"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tvarriendo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
-
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

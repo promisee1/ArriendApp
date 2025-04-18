@@ -1,19 +1,19 @@
 package com.example.login
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.login.R
+import com.example.login.databinding.ActivityPantallaPrincipalBinding
 
 class PantallaPrincipal : AppCompatActivity() {
 
+    private lateinit var binding: ActivityPantallaPrincipalBinding // Declara el binding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pantalla_principal)
-
-        // Referencia al RecyclerView
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerArriendos)
+        binding = ActivityPantallaPrincipalBinding.inflate(layoutInflater) // Inicializa el binding
+        setContentView(binding.root) // Configura el layout con el binding
 
         // Lista de datos de ejemplo
         val listaArriendos = listOf(
@@ -23,7 +23,13 @@ class PantallaPrincipal : AppCompatActivity() {
         )
 
         // Configurar el RecyclerView
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = ArriendoAdapter(listaArriendos)
+        binding.recyclerArriendos.layoutManager = LinearLayoutManager(this)
+        binding.recyclerArriendos.adapter = ArriendoAdapter(listaArriendos)
+
+        // Configurar el botón de perfil
+        binding.btnProfile.setOnClickListener {
+            val intent = Intent(this,  Perfil::class.java)
+            startActivity(intent)
+        }
     }
 }

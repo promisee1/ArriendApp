@@ -40,6 +40,7 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
 }
 
 dependencies {
@@ -54,6 +55,7 @@ dependencies {
 
     // Google Sign-In
     implementation("com.google.android.gms:play-services-auth:20.7.0")
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
