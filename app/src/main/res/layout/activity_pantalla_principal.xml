@@ -6,32 +6,32 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PantallaPrincipal"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".PantallaPrincipal">
 
     <!-- Toolbar: Barra superior -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="@color/toolbar"
         android:titleTextColor="#FFFFFF"
-        android:layout_alignParentTop="true"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Botón de sesión -->
     <ImageButton
         android:id="@+id/btnProfile"
         android:layout_width="45dp"
-        android:layout_height="48dp"
+        android:layout_height="50dp"
         android:src="@drawable/ic_sesion"
         android:background="?android:attr/selectableItemBackgroundBorderless"
-        android:layout_alignParentEnd="true"
+        app:layout_constraintTop_toTopOf="@id/toolbar"
         app:layout_constraintBottom_toBottomOf="@id/toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Título debajo del toolbar -->
     <TextView
         android:id="@+id/tvTitulo"
         android:layout_width="wrap_content"
@@ -39,19 +39,130 @@
         android:text="Arriendos disponibles"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
-
-    <!-- RecyclerView para los arriendos -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerArriendos"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/tvTitulo"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="16dp"/>
 
+    <!-- Card de contenido -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Imagen principal -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="194dp"
+                app:srcCompat="@drawable/departamento"
+                android:scaleType="centerCrop"/>
+
+            <!-- Textos -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:text="Departamento Talca"
+                    android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+                <!-- Habitaciones y Gastos comunes -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/baseline_bedroom"
+                        android:drawablePadding="8dp"
+                        android:text="3 Habitaciones"
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        android:textColor="?android:attr/textColorSecondary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gastos comunes $150.000"
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        android:textColor="?android:attr/textColorSecondary"
+                        android:layout_marginStart="16dp" />
+                </LinearLayout>
+
+                <!-- Baños y Estacionamiento -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <!-- Contenedor de "2 Baños" -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/baseline_bathroom"
+                            android:drawablePadding="8dp"
+                            android:text="2 Baños"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="?android:attr/textColorSecondary" />
+                    </LinearLayout>
+
+                    <!-- Contenedor de "Estacionamiento" -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal"
+                        android:gravity="end">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/baseline_directions_car_24"
+                            android:drawablePadding="8dp"
+                            android:text="Estacionamiento"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="?android:attr/textColorSecondary" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Precio -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$500.000"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    android:layout_gravity="start" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

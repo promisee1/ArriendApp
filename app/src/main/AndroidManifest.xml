@@ -13,6 +13,18 @@
         android:theme="@style/Theme.Login"
         tools:targetApi="31">
         <activity
+            android:name=".PantallaSubirArriendo"
+            android:exported="false" />
+        <activity
+            android:name=".PantallaPrincipal1"
+            android:exported="false" />
+        <activity
+            android:name=".PantallaExpandidaArriendo"
+            android:exported="false" />
+        <activity
+            android:name=".PantallaPerfil"
+            android:exported="false" />
+        <activity
             android:name=".PantallaPrincipalArrendador"
             android:exported="false" />
         <activity
