@@ -58,4 +58,14 @@ dependencies {
     implementation ("com.google.android.material:material:1.11.0")
     implementation ("androidx.cardview:cardview:1.0.0")
 
+    // Credential Manager
+    implementation ("androidx.credentials:credentials:1.2.0-alpha04")
+    implementation ("androidx.credentials:credentials-play-services-auth:1.2.0-alpha04")
+    // Google Identity
+    implementation ("com.google.android.libraries.identity.googleid:googleid:1.1.0")
+    implementation ("com.google.android.gms:play-services-auth:20.0.0")
+
+
+
+
 }
