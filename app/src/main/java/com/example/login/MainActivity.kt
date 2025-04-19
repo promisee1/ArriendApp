@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
 
         auth = Firebase.auth
 
-        // Configura Google Sign-In
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
@@ -69,13 +68,16 @@ class MainActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, pass)
             .addOnCompleteListener {
                 if (it.isSuccessful) {
-                    startActivity(Intent(this, PantallaPrincipal1::class.java))
+                    val intent = Intent(this, PantallaPrincipal1::class.java)
+                    intent.putExtra("correo", email)
+                    startActivity(intent)
                     finish()
                 } else {
                     Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
                 }
             }
     }
+
 
     private val signInLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == RESULT_OK) {
@@ -96,11 +98,18 @@ class MainActivity : AppCompatActivity() {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    startActivity(Intent(this, PantallaPrincipal1::class.java))
+                    val user = auth.currentUser
+                    val email = user?.email ?: "correo@desconocido.com"
+
+                    val intent = Intent(this, PantallaPrincipal1::class.java)
+                    intent.putExtra("correo", email)
+                    startActivity(intent)
                     finish()
                 } else {
                     Toast.makeText(this, "Error autenticando con Firebase", Toast.LENGTH_SHORT).show()
                 }
             }
     }
+
 }
+

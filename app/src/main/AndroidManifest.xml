@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Login"
         tools:targetApi="31">
         <activity
+            android:name=".PantallaExpandidaArriendo2"
+            android:exported="false" />
+        <activity
             android:name=".PantallaSubirArriendo"
             android:exported="false" />
         <activity

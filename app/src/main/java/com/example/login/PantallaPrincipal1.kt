@@ -16,9 +16,15 @@ class PantallaPrincipal1 : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityPantallaPrincipal1Binding.inflate(layoutInflater)
         setContentView(binding.root)
+        val correo = intent.getStringExtra("correo")
+        val correoRegistrado = intent.getStringExtra("correoRegistrado")
+        val nombreRegistrado = intent.getStringExtra("nombreRegistrado")
 
         binding.cardVerArriendos.setOnClickListener {
             val intent = Intent(this, PantallaPrincipal::class.java)
+            intent.putExtra("correo", correo)
+            intent.putExtra("correoRegistrado", correoRegistrado)
+            intent.putExtra("nombreRegistrado", nombreRegistrado)
             startActivity(intent)
         }
         binding.cardSubirArriendo.setOnClickListener {
@@ -27,6 +33,9 @@ class PantallaPrincipal1 : AppCompatActivity() {
 
         binding.btnProfile.setOnClickListener {
             val intent = Intent(this, PantallaPerfil::class.java)
+            intent.putExtra("correo", correo)
+            intent.putExtra("correoRegistrado", correoRegistrado)
+            intent.putExtra("nombreRegistrado", nombreRegistrado)
             startActivity(intent)
         }
     }
